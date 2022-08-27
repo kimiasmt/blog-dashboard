@@ -1,0 +1,22 @@
+.login {
+  @apply w-full h-full bg-gray-lighter m-auto m-auto py-0 px-md;
+  @screen lg {
+    width: 450px;
+    height: 528px;
+  }
+
+  &__header{
+    font-family: HelveticaNeue;
+    font-size: 47px;
+    @apply text-gray text-center pt-md;
+  }
+  &__no-account{
+  @apply flex flex-row items-baseline;
+  }
+  &__password {
+  }
+  &__email {
+  }
+  &__button {
+  }
+}
