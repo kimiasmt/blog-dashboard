@@ -5,12 +5,12 @@
     height: 528px;
   }
 
-  &__header{
+  &__header {
     font-family: HelveticaNeue;
     font-size: 47px;
     @apply text-gray text-center pt-md;
   }
-  &__no-account{
+  &__no-account {
     @apply flex flex-row items-baseline;
   }
   &__password {

@@ -9,11 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './pages/authentication/register/register.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent
-  ],
+  declarations: [AppComponent, LoginComponent, RegisterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,6 +17,6 @@ import { RegisterComponent } from './pages/authentication/register/register.comp
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

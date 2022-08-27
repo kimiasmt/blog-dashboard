@@ -6,39 +6,37 @@ import { AuthenticationService } from '../../../core/services/authentication.ser
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-
   showAlert: boolean = false;
   alertMessage: string = '';
 
-  constructor(private fb: FormBuilder,
-              private router:Router,
-              private authService:AuthenticationService) { }
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthenticationService
+  ) {}
 
   form = this.fb.group({
-    username:['', [Validators.required]],
-    email: ['' , [Validators.required]],
-    password: ['' , [Validators.required]]
-  })
+    username: ['', [Validators.required]],
+    email: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+  });
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  formSubmit () {
-    if(this.form.valid){
-      this.authService.register(this.form.value).subscribe((res:any) => {
-        if(res.code == 201) {
+  formSubmit() {
+    if (this.form.valid) {
+      this.authService.register(this.form.value).subscribe((res: any) => {
+        if (res.code == 201) {
           // this.router.navigate(['/dashboard']);
         } else {
           this.showAlert = true;
           this.alertMessage = res.error;
         }
-      })
+      });
     } else {
-
     }
   }
-
 }
