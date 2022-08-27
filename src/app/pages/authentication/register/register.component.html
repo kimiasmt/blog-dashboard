@@ -4,46 +4,57 @@
   *ngIf="showAlert">
   A simple danger alert—check it out!
 </div>
-<div class="login">
-  <div class="login__header">LOGIN</div>
+<div class="register">
+  <div class="register__header">Register</div>
   <form [formGroup]="form">
-    <div class="login__email">
+    <div class="register__user">
       <div class="form-group">
-        <label for="exampleInputEmail1">Email</label>
+        <label for="user">User</label>
+        <input
+          formControlName="username"
+          class="form-control"
+          id="user"
+          aria-describedby="emailHelp"
+          placeholder="Enter user" />
+      </div>
+    </div>
+    <div class="register__email">
+      <div class="form-group">
+        <label for="email">Email</label>
         <input
           type="email"
           formControlName="email"
           class="form-control"
-          id="exampleInputEmail1"
+          id="email"
           aria-describedby="emailHelp"
           placeholder="Enter email" />
-        <small id="emailHelp" class="invalid-feedback"
+        <small id="emailHelp" class="form-text text-muted"
           >We'll never share your email with anyone else.</small
         >
       </div>
     </div>
-    <div class="login__password">
+    <div class="register__password">
       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
+        <label for="password">Password</label>
         <input
           type="password"
           formControlName="password"
           class="form-control"
-          id="exampleInputPassword1"
+          id="password"
           placeholder="Password" />
       </div>
     </div>
-    <div class="login__button">
+    <div class="register__button">
       <button
         class="btn btn-primary btn-block"
         (click)="formSubmit()"
         type="submit">
-        Login
+        Register
       </button>
     </div>
-    <div class="login__no-account">
-      <div>don't have account?</div>
-      <button type="button" class="btn btn-link">Register Now</button>
+    <div class="register__no-account">
+      <div>Already registered?</div>
+      <button type="button" class="btn btn-link">Login</button>
     </div>
   </form>
 </div>

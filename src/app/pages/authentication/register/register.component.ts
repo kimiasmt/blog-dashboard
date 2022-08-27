@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../../core/services/authentication.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   showAlert: boolean = false;
   alertMessage: string = '';
 
@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   form = this.fb.group({
+    username: ['', [Validators.required]],
     email: ['', [Validators.required]],
     password: ['', [Validators.required]],
   });
@@ -27,14 +28,15 @@ export class LoginComponent implements OnInit {
 
   formSubmit() {
     if (this.form.valid) {
-      this.authService.login(this.form.value).subscribe((res: any) => {
-        if (res.code == 200) {
-          this.router.navigate(['/articles']);
+      this.authService.register(this.form.value).subscribe((res: any) => {
+        if (res.code == 201) {
+          // this.router.navigate(['/dashboard']);
         } else {
           this.showAlert = true;
           this.alertMessage = res.error;
         }
       });
+    } else {
     }
   }
 }

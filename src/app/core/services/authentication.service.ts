@@ -3,18 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthenticationService {
   baseUrl = environment.baseUrl;
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient) {}
 
   login(data: any) {
-    return this._http.post(`${this.baseUrl}/users/login`,{user: data})
+    return this._http.post(`${this.baseUrl}/users/login`, { user: data });
   }
 
-  signUp() {
-    return this._http.get(`${this.baseUrl}/register`)
+  register(data: any) {
+    return this._http.post(`${this.baseUrl}/users`, { user: data });
   }
-
 }
