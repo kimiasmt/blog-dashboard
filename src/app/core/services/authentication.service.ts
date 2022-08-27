@@ -13,8 +13,8 @@ export class AuthenticationService {
     return this._http.post(`${this.baseUrl}/users/login`,{user: data})
   }
 
-  signUp() {
-    return this._http.get(`${this.baseUrl}/register`)
+  register(data: any) {
+    return this._http.post(`${this.baseUrl}/users`, {user: data})
   }
 
 }
