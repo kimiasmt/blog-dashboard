@@ -1,1 +1,42 @@
-<p>create-article works!</p>
+<div class="article" xmlns="http://www.w3.org/1999/html">
+  <div class="article__content">
+    <form [formGroup]="form">
+      <div class="article__title">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            formControlName="title"
+            class="form-control"
+            id="title"
+            placeholder="Title" />
+          <small id="emailHelp" class="invalid-feedback">Required field</small>
+        </div>
+      </div>
+      <div class="article__description">
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            formControlName="description"
+            class="form-control"
+            id="description"
+            placeholder="description" />
+          <small id="descriptionHelp" class="invalid-feedback"
+            >Required field</small
+          >
+        </div>
+      </div>
+      <div class="article__body">
+        <div class="form-group">
+          <label for="body">Body</label>
+          <textarea class="form-control" id="body" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="article__submit">
+        <button class="btn btn-primary" (click)="formSubmit()" type="submit">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="article__tag"></div>
+</div>
