@@ -7,9 +7,11 @@ import { LoginComponent } from './pages/authentication/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './pages/authentication/register/register.component';
+import { AllArticlesComponent } from './pages/dashboard/all-articles/all-articles.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, AllArticlesComponent, DashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

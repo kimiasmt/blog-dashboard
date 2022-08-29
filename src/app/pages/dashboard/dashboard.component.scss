@@ -1,0 +1,31 @@
+.dashboard {
+  &__header {
+    height: 60px;
+    @apply flex flex-row items-center bg-black text-gray-lighter w-full m-auto;
+  }
+  &__layout {
+    height: 100vh;
+    @apply flex flex-row;
+  }
+  &__header-title {
+    @apply ml-md text-md;
+  }
+  &__header-user {
+    @apply ml-xl;
+  }
+  &__sidebar {
+    width: 250px;
+    @apply bg-blue text-gray-lighter flex flex-col;
+  }
+  &__sidebar-title {
+    @apply ml-md;
+  }
+  &__sidebar-item {
+    @apply pl-xl py-xs;
+  }
+  &__sidebar-item:hover {
+    @apply bg-lightBlue;
+  }
+  &__content {
+  }
+}

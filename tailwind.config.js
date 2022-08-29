@@ -20,7 +20,7 @@ module.exports = {
       xs: ['1em', '1.5em'], // ['16px', '24px']    | H5
       sm: ['1.125em', '1.5em'], // ['18px', '24px']    | H4
       md: ['1.5em', '2em'], // ['24px', '32px']    | H3
-      lg: ['2em', '2.5em'], // ['32px', '48px']    | H2
+      lg: ['2em', '1.5em'], // ['32px', '48px']    | H2
       xl: ['2.5em', '3.5em'], // ['40px', '56px']    | H1
     },
     borderWidth: {
