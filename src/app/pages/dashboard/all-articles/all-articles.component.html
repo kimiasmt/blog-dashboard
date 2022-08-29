@@ -2,37 +2,43 @@
 
 <table class="table">
   <thead class="thead-light">
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Title</th>
-    <th scope="col">Author</th>
-    <th scope="col">Tags</th>
-    <th scope="col">excrept</th>
-    <th scope="col">created</th>
-    <th scope="col">action</th>
-  </tr>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Tags</th>
+      <th scope="col">excrept</th>
+      <th scope="col">created</th>
+      <th scope="col">action</th>
+    </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let article of articles;let index = index" >
-    <td >{{index}}</td>
-    <td >{{article.title}}</td>
-    <td >@{{article.author.username}}</td>
-    <td >
-      <div class="flex flex-row" *ngFor="let tag of article?.tagList">{{tag}}</div>
-    </td>
-    <td >{{article.body.split(' ').slice(0,20).join(' ')}}...</td>
-    <td >{{parseDate(article.createdAt)}}</td>
-    <td>
-      <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-        ...
-      </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Edit</a>
-        <a class="dropdown-item" href="#">Delete</a>
-      </div>
-    </div>
-    </td>
-  </tr>
+    <tr *ngFor="let article of articles; let index = index">
+      <td>{{ index }}</td>
+      <td>{{ article.title }}</td>
+      <td>@{{ article.author.username }}</td>
+      <td>
+        <div class="flex flex-row" *ngFor="let tag of article?.tagList">
+          {{ tag }}
+        </div>
+      </td>
+      <td>{{ article.body.split(' ').slice(0, 20).join(' ') }}...</td>
+      <td>{{ parseDate(article.createdAt) }}</td>
+      <td>
+        <div class="dropdown">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            data-toggle="dropdown"
+            aria-expanded="false">
+            ...
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Delete</a>
+          </div>
+        </div>
+      </td>
+    </tr>
   </tbody>
 </table>
