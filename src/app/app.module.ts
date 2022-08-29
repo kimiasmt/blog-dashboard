@@ -9,9 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './pages/authentication/register/register.component';
 import { AllArticlesComponent } from './pages/dashboard/all-articles/all-articles.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CreateArticleComponent } from './pages/dashboard/create-article/create-article.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, AllArticlesComponent, DashboardComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, AllArticlesComponent, DashboardComponent, CreateArticleComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
