@@ -1,3 +1,5 @@
+<div class="text-lg font-semibold ml-md my-xs">All Posts</div>
+
 <table class="table">
   <thead class="thead-light">
   <tr>
@@ -19,7 +21,7 @@
       <div class="flex flex-row" *ngFor="let tag of article?.tagList">{{tag}}</div>
     </td>
     <td >{{article.body.split(' ').slice(0,20).join(' ')}}...</td>
-    <td >{{article.createdAt}}</td>
+    <td >{{parseDate(article.createdAt)}}</td>
     <td>
       <div class="dropdown">
       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
