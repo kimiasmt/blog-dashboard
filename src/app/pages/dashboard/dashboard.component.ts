@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   constructor() {}
-
-  ngOnInit(): void {}
+  user: string | null = '';
+  ngOnInit(): void {
+    this.user = localStorage.getItem('user');
+  }
 }
