@@ -29,8 +29,7 @@ import { AuthGuard } from './core/guard/authentication.guard';
     HttpClientModule,
   ],
   providers: [
-    AuthGuard,
-    // {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true},
   ],
   bootstrap: [AppComponent],
 })

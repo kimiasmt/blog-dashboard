@@ -16,15 +16,13 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent, pathMatch: 'full' },
       {
         path: 'dashboard',
+        canActivate: [AuthGuard],
         component: DashboardComponent,
-        // pathMatch: 'full',
-        canLoad: [AuthGuard],
       },
       {
         path: 'articles/create',
+        canActivate: [AuthGuard],
         component: CreateArticleComponent,
-        // pathMatch: 'full',
-        canLoad: [AuthGuard],
       },
     ],
   },
