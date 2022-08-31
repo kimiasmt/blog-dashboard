@@ -16,6 +16,7 @@ export class CreateArticleComponent implements OnInit {
     private articleService: ArticlesService
   ) {}
 
+  tagList = [];
   form = this.fb.group({
     title: ['', [Validators.required]],
     description: ['', [Validators.required]],
@@ -23,7 +24,15 @@ export class CreateArticleComponent implements OnInit {
     tagList: [['kimia'], [Validators.required]],
   });
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getTagList();
+  }
+
+  getTagList() {
+    this.articleService.getTagList().subscribe((res:any) => {
+      this.tagList = res.tags;
+    })
+  }
 
   formSubmit() {
     // if (this.form.valid) {

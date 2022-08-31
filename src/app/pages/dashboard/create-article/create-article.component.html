@@ -1,6 +1,6 @@
+<form [formGroup]="form">
 <div class="article" xmlns="http://www.w3.org/1999/html">
   <div class="article__content">
-    <form [formGroup]="form">
       <div class="article__title">
         <div class="form-group">
           <label for="title">Title</label>
@@ -36,7 +36,29 @@
           Submit
         </button>
       </div>
-    </form>
   </div>
-  <div class="article__tag"></div>
+  <div class="article__tag">
+    <div class="article__tag-input">
+      <div class="form-group">
+        <label for="tag">Tags</label>
+        <input
+          formControlName="tag"
+          class="form-control"
+          id="tag"
+          placeholder="new Tag" />
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+      <div class="article__tag-checkbox">
+      <div class="form-check" *ngFor="let tag of tagList">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">{{tag}}</label>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
 </div>
+</form>
+

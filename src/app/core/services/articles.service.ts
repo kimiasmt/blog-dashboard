@@ -19,6 +19,9 @@ export class ArticlesService {
 
   deleteArticle(slug:string) {
     return this._http.delete(`${this.baseUrl}/articles/${slug}`,);
+  }
 
+  getTagList() {
+    return this._http.get(`${this.baseUrl}/tags`);
   }
 }

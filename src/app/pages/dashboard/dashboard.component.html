@@ -6,11 +6,11 @@
   <div class="dashboard__layout">
     <div class="dashboard__sidebar">
       <div class="dashboard__sidebar-title">Post</div>
-      <div class="dashboard__sidebar-item">All Articles</div>
-      <div class="dashboard__sidebar-item">New Article</div>
+      <div class="dashboard__sidebar-item" (click)="selectDashboard(1)">All Articles</div>
+      <div class="dashboard__sidebar-item" (click)="selectDashboard(2)">New Article</div>
     </div>
     <div class="dashboard__content">
-      <app-all-articles></app-all-articles>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

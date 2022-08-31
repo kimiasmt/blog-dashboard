@@ -1,0 +1,9 @@
+.article {
+  @apply flex flex-row m-xl;
+  &__content{
+    @apply w-2/3;
+  }
+  &__tag{
+    @apply w-1/3 ml-xl;
+  }
+}
