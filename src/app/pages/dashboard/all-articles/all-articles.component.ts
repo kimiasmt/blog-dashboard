@@ -23,13 +23,16 @@ export class AllArticlesComponent implements OnInit {
     let converted = new Date(date);
     return converted.toDateString();
   }
-  deleteArticle(slug:string) {
-    this.articlesService.deleteArticle(slug).subscribe((res:any) => {
-      this.showAlert = true;
-      this.getArticle();
-      console.log(res);
-    },error => {
-      console.log(error);
-    })
+  deleteArticle(slug: string) {
+    this.articlesService.deleteArticle(slug).subscribe(
+      (res: any) => {
+        this.showAlert = true;
+        this.getArticle();
+        console.log(res);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 }
