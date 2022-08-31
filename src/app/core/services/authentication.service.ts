@@ -19,7 +19,7 @@ export class AuthenticationService {
         localStorage.setItem('token', data.user.token);
         localStorage.setItem('user', data.user.username);
         this.loginStatus$.next(true);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/articles']);
       })
     );
   }

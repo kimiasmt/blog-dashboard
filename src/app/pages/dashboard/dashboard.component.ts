@@ -19,4 +19,8 @@ export class DashboardComponent implements OnInit {
       this.router.navigate(['/articles/create'])
   }
 
+  logout() {
+      localStorage.clear();
+      this.router.navigate(['/login']);
+  }
 }

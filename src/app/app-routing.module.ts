@@ -21,15 +21,22 @@ const routes: Routes = [
         component: DashboardComponent,
         children: [
           {
-          path: 'articles/create',
-          canActivate: [AuthGuard],
-          component: CreateArticleComponent,
-        },
-          {
             path: 'articles',
             canActivate: [AuthGuard],
             component: AllArticlesComponent,
-          },]
+          },
+          {
+            path: 'articles/create',
+            canActivate: [AuthGuard],
+            component: CreateArticleComponent,
+          },
+          {
+            path: 'articles/edit/:slug',
+            canActivate: [AuthGuard],
+            component: CreateArticleComponent,
+          },
+
+        ]
       },
 
     ],
