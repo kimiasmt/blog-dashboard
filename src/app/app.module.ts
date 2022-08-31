@@ -12,6 +12,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CreateArticleComponent } from './pages/dashboard/create-article/create-article.component';
 import { AuthInterceptorService } from './core/interceptor/authentication.interceptor';
 import { AuthGuard } from './core/guard/authentication.guard';
+import { AlertComponent } from './shared/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AuthGuard } from './core/guard/authentication.guard';
     AllArticlesComponent,
     DashboardComponent,
     CreateArticleComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

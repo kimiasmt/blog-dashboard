@@ -10,10 +10,15 @@ export class ArticlesService {
   constructor(private _http: HttpClient) {}
 
   getArticles() {
-    return this._http.get(`${this.baseUrl}/articles`);
+    return this._http.get(`${this.baseUrl}/articles/`);
   }
 
   postArticle(data: any) {
     return this._http.post(`${this.baseUrl}/articles`, { article: data });
+  }
+
+  deleteArticle(slug:string) {
+    return this._http.delete(`${this.baseUrl}/articles/${slug}`,);
+
   }
 }
