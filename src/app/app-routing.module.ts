@@ -35,10 +35,8 @@ const routes: Routes = [
             canActivate: [AuthGuard],
             component: CreateArticleComponent,
           },
-
-        ]
+        ],
       },
-
     ],
   },
 ];

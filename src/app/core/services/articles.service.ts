@@ -17,19 +17,21 @@ export class ArticlesService {
     return this._http.post(`${this.baseUrl}/articles`, { article: data });
   }
 
-  updateArticle(slug: string,data: any) {
-    return this._http.put(`${this.baseUrl}/articles/${slug}`, { article: data });
+  updateArticle(slug: string, data: any) {
+    return this._http.put(`${this.baseUrl}/articles/${slug}`, {
+      article: data,
+    });
   }
 
-  deleteArticle(slug:string) {
-    return this._http.delete(`${this.baseUrl}/articles/${slug}`,);
+  deleteArticle(slug: string) {
+    return this._http.delete(`${this.baseUrl}/articles/${slug}`);
   }
 
   getTagList() {
     return this._http.get(`${this.baseUrl}/tags`);
   }
 
-  getArticle(slug:string) {
+  getArticle(slug: string) {
     return this._http.get(`${this.baseUrl}/articles/${slug}`);
   }
 }

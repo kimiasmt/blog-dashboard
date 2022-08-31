@@ -1,4 +1,6 @@
-<app-alert [alertMessage]="'deleted successfully!'" [showAlert]="showAlert"></app-alert>
+<app-alert
+  [alertMessage]="'deleted successfully!'"
+  [showAlert]="showAlert"></app-alert>
 <div class="text-lg font-semibold ml-md my-xs">All Posts</div>
 <table class="table">
   <thead class="thead-light">
@@ -33,27 +35,54 @@
             aria-expanded="false">
             ...
           </button>
-          <div class="dropdown-menu ">
-            <div class="dropdown-item" href="#" [routerLink]="['/articles/edit',article?.slug]">Edit</div>
+          <div class="dropdown-menu">
+            <div
+              class="dropdown-item"
+              href="#"
+              [routerLink]="['/articles/edit', article?.slug]">
+              Edit
+            </div>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" data-toggle="modal" data-target="#deleteModal">Delete</a>
+            <a
+              class="dropdown-item"
+              data-toggle="modal"
+              data-target="#deleteModal"
+              >Delete</a
+            >
           </div>
         </div>
-        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+        <div
+          class="modal fade"
+          id="deleteModal"
+          tabindex="-1"
+          aria-labelledby="deleteModal"
+          aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete Article</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Delete Article
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
-                Are you sure to delete Article?
-              </div>
+              <div class="modal-body">Are you sure to delete Article?</div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deleteArticle(article.slug)">Yes</button>
-                <button type="button" class="btn btn-outline-secondary">No</button>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-dismiss="modal"
+                  (click)="deleteArticle(article.slug)">
+                  Yes
+                </button>
+                <button type="button" class="btn btn-outline-secondary">
+                  No
+                </button>
               </div>
             </div>
           </div>
