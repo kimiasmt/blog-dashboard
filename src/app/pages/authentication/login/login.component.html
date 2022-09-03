@@ -11,9 +11,11 @@
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder="Enter email"
-          required />
+          required
+          [ngClass]="{'is-invalid': submitted && form.controls['email'].errors}"
+        />
         <small class="invalid-feedback"
-          >require</small
+          >*required field</small
         >
       </div>
     </div>
@@ -27,7 +29,11 @@
           id="exampleInputPassword1"
           placeholder="Password"
           required
+          [ngClass]="{'is-invalid': submitted && form.controls['password'].errors}"
         />
+        <small class="invalid-feedback"
+        >*required field</small
+        >
       </div>
     </div>
     <div class="login__button">

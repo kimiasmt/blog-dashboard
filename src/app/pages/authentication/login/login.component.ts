@@ -11,7 +11,7 @@ import { AuthenticationService } from '../../../core/services/authentication.ser
 export class LoginComponent implements OnInit {
   showAlert: boolean = false;
   alertMessage: string = '';
-
+  submitted = false;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -26,14 +26,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   formSubmit() {
+    this.submitted = true;
     if (this.form.valid) {
+      // this.submitted = true;
       this.authService.login(this.form.value).subscribe((res: any) => {
+        this.submitted = true;
         if (res.code == 200) {
           this.router.navigate(['/articles']);
         } else {
           this.showAlert = true;
           this.alertMessage = res.error;
         }
+      }, error => {
+
       });
     }
   }
