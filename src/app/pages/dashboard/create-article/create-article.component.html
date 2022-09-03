@@ -10,8 +10,8 @@
             id="title"
             placeholder="Title"
             [ngClass]="{
-            'is-invalid': submitted && form.controls['title'].errors
-          }" />
+              'is-invalid': submitted && form.controls['title'].errors
+            }" />
           <small class="invalid-feedback">*required field</small>
         </div>
       </div>
@@ -39,7 +39,11 @@
         </div>
       </div>
       <div class="article__submit">
-        <button class="btn btn-primary" (click)="formSubmit()" type="submit" [disabled]="loading">
+        <button
+          class="btn btn-primary"
+          (click)="formSubmit()"
+          type="submit"
+          [disabled]="loading">
           Submit
         </button>
       </div>
@@ -64,8 +68,7 @@
                 type="checkbox"
                 id="inlineCheckbox1"
                 [value]="tag"
-                (change)="onCheckChange($event)"
-              />
+                (change)="onCheckChange($event)" />
               <label class="form-check-label" for="inlineCheckbox1">{{
                 tag
               }}</label>
