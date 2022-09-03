@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticlesService } from '../../../core/services/articles.service';
 
@@ -23,7 +23,7 @@ export class CreateArticleComponent implements OnInit {
     title: ['', [Validators.required]],
     description: [''],
     body: [''],
-    tagList: [['kimia']],
+    tagList: new FormArray([]),
   });
   loading: boolean = false;
 
@@ -65,5 +65,23 @@ export class CreateArticleComponent implements OnInit {
         this.loading = false;
       });
     }
+  }
+
+  onCheckChange(event:any) {
+    const formArray: FormArray = this.form.get('tagList') as FormArray;
+    if(event.target?.checked) {
+       formArray.push(new FormControl(event.target.value))
+    }
+    else  {
+      let i: number = 0;
+      formArray.controls.forEach((ctrl:any) => {
+        if(ctrl.value == event.target.value) {
+          formArray.removeAt(i);
+          return;
+        }
+        i++;
+      });
+    }  console.log(this.form.value)
+
   }
 }
