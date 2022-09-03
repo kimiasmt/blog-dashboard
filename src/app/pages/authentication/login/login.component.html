@@ -1,6 +1,6 @@
 <div class="login">
   <div class="login__header">LOGIN</div>
-  <form [formGroup]="form">
+  <form [formGroup]="form" >
     <div class="login__email">
       <div class="form-group">
         <label for="exampleInputEmail1">Email</label>
@@ -12,8 +12,8 @@
           aria-describedby="emailHelp"
           placeholder="Enter email"
           required />
-        <small id="emailHelp" class="invalid-feedback"
-          >We'll never share your email with anyone else.</small
+        <small class="invalid-feedback"
+          >require</small
         >
       </div>
     </div>
@@ -25,7 +25,9 @@
           formControlName="password"
           class="form-control"
           id="exampleInputPassword1"
-          placeholder="Password" />
+          placeholder="Password"
+          required
+        />
       </div>
     </div>
     <div class="login__button">
@@ -38,7 +40,7 @@
     </div>
     <div class="login__no-account">
       <div>don't have account?</div>
-      <button type="button" class="btn btn-link">Register Now</button>
+      <button type="button" class="btn btn-link" (click)="navigateToRegister()">Register Now</button>
     </div>
   </form>
 </div>
