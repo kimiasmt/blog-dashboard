@@ -40,7 +40,7 @@ export class CreateArticleComponent implements OnInit {
 
   getTagList() {
     this.articleService.getTagList().subscribe((res: any) => {
-      this.tagList = res.tags;
+      this.tagList = res.tags.sort();
     });
   }
 
