@@ -18,12 +18,14 @@ export class CreateArticleComponent implements OnInit {
   tagList = [];
   editMode: boolean = false;
   slug: string = '';
+  submitted = false;
   form = this.fb.group({
     title: ['', [Validators.required]],
-    description: ['', [Validators.required]],
-    body: ['', [Validators.required]],
-    tagList: [['kimia'], [Validators.required]],
+    description: [''],
+    body: [''],
+    tagList: [['kimia']],
   });
+  loading: boolean = false;
 
   ngOnInit() {
     this.getTagList();
@@ -43,18 +45,24 @@ export class CreateArticleComponent implements OnInit {
   }
 
   formSubmit() {
+    this.submitted = true;
     if (this.editMode) {
+      this.loading = true
       this.articleService.updateArticle(this.slug, this.form.value).subscribe(
         (res: any) => {
+          this.loading = false;
           this.router.navigate(['/articles']);
         },
         error => {
+          this.loading = false;
           console.log(error);
         }
       );
     } else {
+      this.loading = true
       this.articleService.postArticle(this.form.value).subscribe((res: any) => {
         this.router.navigate(['/articles']);
+        this.loading = false;
       });
     }
   }
