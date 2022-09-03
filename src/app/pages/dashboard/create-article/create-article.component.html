@@ -8,8 +8,11 @@
             formControlName="title"
             class="form-control"
             id="title"
-            placeholder="Title" />
-          <small id="emailHelp" class="invalid-feedback">Required field</small>
+            placeholder="Title"
+            [ngClass]="{
+            'is-invalid': submitted && form.controls['title'].errors
+          }" />
+          <small class="invalid-feedback">*required field</small>
         </div>
       </div>
       <div class="article__description">
@@ -36,7 +39,7 @@
         </div>
       </div>
       <div class="article__submit">
-        <button class="btn btn-primary" (click)="formSubmit()" type="submit">
+        <button class="btn btn-primary" (click)="formSubmit()" type="submit" [disabled]="loading">
           Submit
         </button>
       </div>
