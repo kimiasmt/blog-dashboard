@@ -29,21 +29,22 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     if (this.form.valid) {
       // this.submitted = true;
-      this.authService.login(this.form.value).subscribe((res: any) => {
-        this.submitted = true;
-        if (res.code == 200) {
-          this.router.navigate(['/articles']);
-        } else {
-          this.showAlert = true;
-          this.alertMessage = res.error;
-        }
-      }, error => {
-
-      });
+      this.authService.login(this.form.value).subscribe(
+        (res: any) => {
+          this.submitted = true;
+          if (res.code == 200) {
+            this.router.navigate(['/articles']);
+          } else {
+            this.showAlert = true;
+            this.alertMessage = res.error;
+          }
+        },
+        error => {}
+      );
     }
   }
 
   navigateToRegister() {
-    this.router.navigate(['/register'])
+    this.router.navigate(['/register']);
   }
 }

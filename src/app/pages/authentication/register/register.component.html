@@ -16,11 +16,10 @@
           id="user"
           aria-describedby="emailHelp"
           placeholder="Enter user"
-          [ngClass]="{'is-invalid': submitted && form.controls['username'].errors}"
-        />
-        <small class="invalid-feedback"
-        >*required field</small
-        >
+          [ngClass]="{
+            'is-invalid': submitted && form.controls['username'].errors
+          }" />
+        <small class="invalid-feedback">*required field</small>
       </div>
     </div>
     <div class="register__email">
@@ -33,11 +32,10 @@
           id="email"
           aria-describedby="emailHelp"
           placeholder="Enter email"
-          [ngClass]="{'is-invalid': submitted && form.controls['email'].errors}"
-        />
-        <small class="invalid-feedback"
-        >*required field</small
-        >
+          [ngClass]="{
+            'is-invalid': submitted && form.controls['email'].errors
+          }" />
+        <small class="invalid-feedback">*required field</small>
       </div>
     </div>
     <div class="register__password">
@@ -49,11 +47,10 @@
           class="form-control"
           id="password"
           placeholder="Password"
-          [ngClass]="{'is-invalid': submitted && form.controls['password'].errors}"
-        />
-        <small class="invalid-feedback"
-        >*required field</small
-        >
+          [ngClass]="{
+            'is-invalid': submitted && form.controls['password'].errors
+          }" />
+        <small class="invalid-feedback">*required field</small>
       </div>
     </div>
     <div class="register__button">
@@ -66,7 +63,9 @@
     </div>
     <div class="register__no-account">
       <div>Already registered?</div>
-      <button type="button" class="btn btn-link" (click)="navigateToLogin()">Login</button>
+      <button type="button" class="btn btn-link" (click)="navigateToLogin()">
+        Login
+      </button>
     </div>
   </form>
 </div>

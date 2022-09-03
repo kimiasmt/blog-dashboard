@@ -1,6 +1,6 @@
 <div class="login">
   <div class="login__header">LOGIN</div>
-  <form [formGroup]="form" >
+  <form [formGroup]="form">
     <div class="login__email">
       <div class="form-group">
         <label for="exampleInputEmail1">Email</label>
@@ -12,11 +12,10 @@
           aria-describedby="emailHelp"
           placeholder="Enter email"
           required
-          [ngClass]="{'is-invalid': submitted && form.controls['email'].errors}"
-        />
-        <small class="invalid-feedback"
-          >*required field</small
-        >
+          [ngClass]="{
+            'is-invalid': submitted && form.controls['email'].errors
+          }" />
+        <small class="invalid-feedback">*required field</small>
       </div>
     </div>
     <div class="login__password">
@@ -29,11 +28,10 @@
           id="exampleInputPassword1"
           placeholder="Password"
           required
-          [ngClass]="{'is-invalid': submitted && form.controls['password'].errors}"
-        />
-        <small class="invalid-feedback"
-        >*required field</small
-        >
+          [ngClass]="{
+            'is-invalid': submitted && form.controls['password'].errors
+          }" />
+        <small class="invalid-feedback">*required field</small>
       </div>
     </div>
     <div class="login__button">
@@ -46,7 +44,9 @@
     </div>
     <div class="login__no-account">
       <div>don't have account?</div>
-      <button type="button" class="btn btn-link" (click)="navigateToRegister()">Register Now</button>
+      <button type="button" class="btn btn-link" (click)="navigateToRegister()">
+        Register Now
+      </button>
     </div>
   </form>
 </div>
