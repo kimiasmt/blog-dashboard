@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticlesService } from '../../../core/services/articles.service';
 
@@ -23,7 +28,7 @@ export class CreateArticleComponent implements OnInit {
     title: ['', [Validators.required]],
     description: [''],
     body: [''],
-    tagList: [['kimia']],
+    tagList: new FormArray([]),
   });
   loading: boolean = false;
 
@@ -47,7 +52,7 @@ export class CreateArticleComponent implements OnInit {
   formSubmit() {
     this.submitted = true;
     if (this.editMode) {
-      this.loading = true
+      this.loading = true;
       this.articleService.updateArticle(this.slug, this.form.value).subscribe(
         (res: any) => {
           this.loading = false;
@@ -59,11 +64,28 @@ export class CreateArticleComponent implements OnInit {
         }
       );
     } else {
-      this.loading = true
+      this.loading = true;
       this.articleService.postArticle(this.form.value).subscribe((res: any) => {
         this.router.navigate(['/articles']);
         this.loading = false;
       });
     }
+  }
+
+  onCheckChange(event: any) {
+    const formArray: FormArray = this.form.get('tagList') as FormArray;
+    if (event.target?.checked) {
+      formArray.push(new FormControl(event.target.value));
+    } else {
+      let i: number = 0;
+      formArray.controls.forEach((ctrl: any) => {
+        if (ctrl.value == event.target.value) {
+          formArray.removeAt(i);
+          return;
+        }
+        i++;
+      });
+    }
+    console.log(this.form.value);
   }
 }
