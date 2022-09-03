@@ -4,7 +4,8 @@
     @apply flex flex-row items-center bg-black text-gray-lighter w-full m-auto;
   }
   &__layout {
-    height: 100vh;
+    min-height: 100vh;
+    height: max-content;
     @apply flex flex-row;
   }
   &__header-title {
@@ -21,7 +22,7 @@
     @apply ml-md;
   }
   &__sidebar-item {
-    @apply pl-xl py-xs;
+    @apply pl-xl py-xs cursor-pointer;
   }
   &__sidebar-item:hover {
     @apply bg-lightBlue;
